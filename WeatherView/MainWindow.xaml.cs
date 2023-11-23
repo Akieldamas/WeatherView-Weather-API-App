@@ -16,6 +16,8 @@ using System.Windows.Shapes;
 using System.Net.Http;
 using Newtonsoft.Json;
 
+// V1 Weather API
+
 namespace WeatherView
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
