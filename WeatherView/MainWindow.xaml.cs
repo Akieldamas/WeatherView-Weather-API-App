@@ -90,7 +90,7 @@ namespace WeatherView
         public MainWindow()
         {
             InitializeComponent();
-        _: GetWeather();
+            _:GetWeather();
         }
 
         public async Task<string> GetWeather()
@@ -105,6 +105,7 @@ namespace WeatherView
                     Root root = JsonConvert.DeserializeObject<Root>(content);
 
                     Main main = root.main;
+
                     TB_Currently.Text = "Today:  " + main.temp.ToString() + "°C";
                     TB_High.Text = "High:  " + root.main.temp_max.ToString() + "°C";
                     TB_Low.Text = "Low:  " + main.temp_min.ToString() + "°C";
@@ -120,6 +121,5 @@ namespace WeatherView
             }
             return null;
         }
-
     }
 }
