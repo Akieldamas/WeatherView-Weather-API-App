@@ -5,12 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WeatherView"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="400">
+        Title="WeatherView" Height="600" Width="400" ResizeMode="NoResize">
+
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="TextBlock.Foreground" Value="White"/>
+            </Style>
+        </Grid.Resources>
+
         <Grid.Background>
-            <ImageBrush ImageSource="\Assets\Background.jpg"></ImageBrush>
-            </Grid.Background>
-        
+            <ImageBrush ImageSource="\Assets\Background.jpg"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="185*"/>
+            <ColumnDefinition Width="114*"/>
+        </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="76*"/>
             <RowDefinition Height="66*"/>
@@ -20,11 +33,56 @@
             <RowDefinition Height="30*"/>
             <RowDefinition Height="101*"/>
         </Grid.RowDefinitions>
-        <ComboBox x:Name="ComboBox_Cities" Grid.Row="0" HorizontalAlignment="Left" Margin="35,10,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
-        <Label x:Name="Label_Time" Grid.Row="0" Content="02:30" HorizontalAlignment="Left" Margin="287,0,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-        <Label x:Name="Label_Date" Grid.Row="0" Content="14 DEC 2019" HorizontalAlignment="Left" Margin="287,20,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-        <Label x:Name="Label_Day" Grid.Row="0" Content="Saturday" HorizontalAlignment="Left" Margin="287,40,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-         
-           
+
+        <ComboBox x:Name="ComboBox_Cities" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" Width="120" Height="22" Grid.ColumnSpan="2" Opacity="0.3">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FFE5E5E5" Offset="0.03"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <TextBlock x:Name="TB_Time" Text="02:30" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,11,0,0" VerticalAlignment="Top" Width="104" Height="40" Grid.Column="2" FontSize="30"/>
+        <TextBlock x:Name="TB_Date" Grid.Row="0" Text="14 DEC 2019" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,46,0,0" VerticalAlignment="Top" Width="104" Height="26" Grid.Column="2" FontSize="17"/>
+        <TextBlock x:Name="TB_Day" Grid.Row="0" Text="Saturday" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,61,0,0" VerticalAlignment="Top" Width="104" Height="26" Grid.Column="2" FontSize="20" Grid.RowSpan="2"/>
+        <TextBlock x:Name="TB_City" Grid.Row="1" Text="Annecy" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontSize="40" Grid.Column="1"/>
+
+        <TextBlock x:Name="TB_Temperature" Grid.RowSpan="2" Text="25" Margin="0,60,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" Grid.Row="1"/>
+        <TextBlock x:Name="TB_Celsius" Grid.Row="1" Grid.ColumnSpan="1" Text="°C" Margin="71,66,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Grid.RowSpan="2"/>
+
+        <TextBlock x:Name="TB_MaxTemperature" Grid.Row="1" Grid.Column="0" Text="30°C" Margin="30,-25,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="TB_MinTemperature" Grid.Row="1" Grid.Column="0" Text="20°C" Margin="30,25,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+        <Image x:Name="WeatherImage" Grid.Row="1" Grid.Column="2"/>
+
+        <Image x:Name="Image_MaxTemp" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,-25,0,0" Source="\Assets\MaxTempArrow.png" Height="20" Width="20"/>
+        <Image x:Name="Image_MinTemp" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,30,0,0" Source="\Assets\MinTempArrow.png" Height="20" Width="20" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan="5" Margin="30,200,30,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="20" BorderThickness="2" Opacity="0.4" BorderBrush="White"/>
+            <TextBlock x:Name="TB_WindSpeed" Text="20 km/h" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="25"/>
+            <Image x:Name="WindImage" Source="\Assets\WindIcon.png" Grid.Column="1" Grid.Row="0" Height="75" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Grid>
+
+        <TextBlock x:Name="EarlyWeather" Grid.ColumnSpan="3" Grid.Row="5" Text="---- Early Weather ----" TextAlignment="Center" FontSize="20" Opacity="0.8"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="-308,9,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+
     </Grid>
+
 </Window>

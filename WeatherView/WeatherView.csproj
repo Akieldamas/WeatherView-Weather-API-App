@@ -10,6 +10,9 @@
   <ItemGroup>
     <None Remove="Assets\Background.jpg" />
     <None Remove="Assets\image.png" />
+    <None Remove="Assets\MaxTempArrow.png" />
+    <None Remove="Assets\MinTempArrow.png" />
+    <None Remove="Assets\WindIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +24,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\MaxTempArrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\MinTempArrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\WindIcon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
