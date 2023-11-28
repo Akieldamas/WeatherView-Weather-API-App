@@ -46,6 +46,7 @@
         <TextBlock x:Name="TB_Date" Grid.Row="0" Text="14 DEC 2019" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,46,0,0" VerticalAlignment="Top" Width="104" Height="26" Grid.Column="2" FontSize="17"/>
         <TextBlock x:Name="TB_Day" Grid.Row="0" Text="Saturday" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,61,0,0" VerticalAlignment="Top" Width="104" Height="26" Grid.Column="2" FontSize="20" Grid.RowSpan="2"/>
         <TextBlock x:Name="TB_City" Grid.Row="1" Text="Annecy" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontSize="40" Grid.Column="1"/>
+        <TextBlock x:Name="TB_WeatherState" Grid.RowSpan="3" Text="Sunny" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="3"/>
 
         <TextBlock x:Name="TB_Temperature" Grid.RowSpan="2" Text="25" Margin="0,60,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" Grid.Row="1"/>
         <TextBlock x:Name="TB_Celsius" Grid.Row="1" Grid.ColumnSpan="1" Text="°C" Margin="71,66,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Grid.RowSpan="2"/>
@@ -76,12 +77,47 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Border Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="20" BorderThickness="2" Opacity="0.4" BorderBrush="White"/>
-            <TextBlock x:Name="TB_WindSpeed" Text="20 km/h" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="25"/>
+            <TextBlock x:Name="TB_WindSpeed" Text="20 km/h" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" Margin="75,0,0,0"/>
+            <Border Grid.ColumnSpan="2" Grid.Row="1" Opacity="0.4" BorderThickness="2" CornerRadius="0,0,20,20" BorderBrush="White"/>
+
+            <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                <WrapPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
+                    <Image Width="80" Height="80" Source="Assets\image.png" Margin="5"/>
+                    <Image Width="80" Height="80" Source="Assets\image.png" Margin="5"/>
+                    <Image Width="80" Height="80" Source="Assets\image.png" Margin="5"/>
+                    <Image Width="80" Height="80" Source="Assets\image.png" Margin="5"/>
+                    <Image Width="80" Height="80" Source="Assets\image.png" Margin="5"/>
+
+                    <Image Width="80" Height="80" Source="Assets\image.png" Margin="5"/>
+                    <Image Width="80" Height="80" Source="Assets\image.png" Margin="5"/>
+                    <Image Width="80" Height="80" Source="Assets\image.png" Margin="5"/>
+                    <Image Width="80" Height="80" Source="Assets\image.png" Margin="5"/>
+
+                </WrapPanel>
+            </ScrollViewer>
+            <TextBlock x:Name="TB_WindSpeedText" Text="Wind Speed" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" Margin="19,0,0,4"/>
             <Image x:Name="WindImage" Source="\Assets\WindIcon.png" Grid.Column="1" Grid.Row="0" Height="75" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            
+
         </Grid>
 
+
         <TextBlock x:Name="EarlyWeather" Grid.ColumnSpan="3" Grid.Row="5" Text="---- Early Weather ----" TextAlignment="Center" FontSize="20" Opacity="0.8"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="-308,9,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+
+        <Grid Grid.ColumnSpan="3" Grid.Row="5" Margin="30,36,30,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.ColumnSpan="3" CornerRadius="20" BorderThickness="2" Opacity="0.4" BorderBrush="White"/>
+            <Image Grid.Column="0" Grid.Row="0" Margin="9,7,8,31"/>
+            <TextBlock Text="°C / °C" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10"/>
+            <Image Grid.Column="1" Grid.Row="0" Margin="9,7,8,31"/>
+            <TextBlock Text="°C / °C" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10"/>
+            <Image Grid.Column="2" Grid.Row="0" Margin="9,7,8,31"/>
+            <TextBlock Text="°C / °C" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10"/>
+        </Grid>
 
     </Grid>
 
