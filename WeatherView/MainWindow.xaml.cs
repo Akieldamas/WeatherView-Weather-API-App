@@ -51,8 +51,6 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
-
-
     public class _10H00
     {
         public string ICON { get; set; }
@@ -78,9 +76,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
-
-
     public class _11H00
     {
         public string ICON { get; set; }
@@ -106,7 +101,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
 
 
     public class _12H00
@@ -584,7 +578,6 @@ namespace WeatherView
     }
 
 
-
     public class _6H00
     {
         public string ICON { get; set; }
@@ -610,7 +603,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
 
 
     public class _7H00
