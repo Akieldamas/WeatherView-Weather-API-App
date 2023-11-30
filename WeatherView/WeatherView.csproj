@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="Assets\Background.jpg" />
+    <None Remove="Assets\HumidityImage.png" />
     <None Remove="Assets\image.png" />
     <None Remove="Assets\MaxTempArrow.png" />
     <None Remove="Assets\MinTempArrow.png" />
@@ -21,6 +22,9 @@
 
   <ItemGroup>
     <Resource Include="Assets\Background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\HumidityImage.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\image.png">

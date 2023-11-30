@@ -34,7 +34,7 @@
             <RowDefinition Height="101*"/>
         </Grid.RowDefinitions>
 
-        <ComboBox x:Name="ComboBox_Cities" HorizontalAlignment="Left" Margin="48,22,0,0" VerticalAlignment="Top" Width="120" Height="22" Grid.ColumnSpan="2" Opacity="0.3">
+        <ComboBox x:Name="ComboBox_Cities" HorizontalAlignment="Left" Margin="12,9,0,0" VerticalAlignment="Top" Width="120" Height="22" Grid.ColumnSpan="2" Opacity="0.3">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1">
                     <GradientStop Color="#FFF0F0F0"/>
@@ -46,7 +46,7 @@
         <TextBlock x:Name="TB_Date" Grid.Row="0" Text="14 DEC 2019" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,46,0,0" VerticalAlignment="Top" Width="104" Height="26" Grid.Column="2" FontSize="17"/>
         <TextBlock x:Name="TB_Day" Grid.Row="0" Text="Saturday" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,61,0,0" VerticalAlignment="Top" Width="104" Height="26" Grid.Column="2" FontSize="20" Grid.RowSpan="2"/>
         <TextBlock x:Name="TB_City" Grid.Row="1" Text="Annecy" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontSize="40" Grid.Column="1"/>
-        <TextBlock x:Name="TB_WeatherState" Grid.RowSpan="3" Text="Sunny" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="TB_WeatherState" Grid.RowSpan="3" Text="Sunny" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="3"/>
 
         <TextBlock x:Name="TB_Temperature" Grid.RowSpan="2" Text="25" Margin="0,60,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" Grid.Row="1"/>
         <TextBlock x:Name="TB_Celsius" Grid.Row="1" Grid.ColumnSpan="1" Text="°C" Margin="71,66,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Grid.RowSpan="2"/>
@@ -77,7 +77,8 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Border Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="20" BorderThickness="2" Opacity="0.4" BorderBrush="White"/>
-            <TextBlock x:Name="TB_WindSpeed" Text="20 km/h" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" Margin="75,0,0,0"/>
+            <TextBlock x:Name="TB_WindSpeed" Text="20 km/h" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" Margin="70,0,0,0"/>
+            <TextBlock x:Name="TB_Humidity" Text="80%" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" Margin="84,0,0,0"/>
             <Border Grid.ColumnSpan="2" Grid.Row="1" Opacity="0.4" BorderThickness="2" CornerRadius="0,0,20,20" BorderBrush="White"/>
 
             <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
@@ -96,8 +97,10 @@
                 </WrapPanel>
             </ScrollViewer>
             <TextBlock x:Name="TB_WindSpeedText" Text="Wind Speed" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" Margin="19,0,0,4"/>
-            <Image x:Name="WindImage" Source="\Assets\WindIcon.png" Grid.Column="1" Grid.Row="0" Height="75" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            
+            <Image x:Name="WindImage" Source="\Assets\WindIcon.png" Grid.Column="1" Height="83" Width="65" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0,0,0"/>
+            <TextBlock x:Name="TB_HumidityText" Text="Humidity" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" Margin="38,0,0,3"/>
+            <Image x:Name="HumidityImage" Source="\Assets\HumidityImage.png" Height="77" Width="73" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,15,0,0"/>
+
 
         </Grid>
 
@@ -111,13 +114,14 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Border Grid.ColumnSpan="3" CornerRadius="20" BorderThickness="2" Opacity="0.4" BorderBrush="White"/>
-            <Image Grid.Column="0" Grid.Row="0" Margin="9,7,8,31"/>
-            <TextBlock Text="°C / °C" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10"/>
-            <Image Grid.Column="1" Grid.Row="0" Margin="9,7,8,31"/>
-            <TextBlock Text="°C / °C" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10"/>
-            <Image Grid.Column="2" Grid.Row="0" Margin="9,7,8,31"/>
-            <TextBlock Text="°C / °C" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10"/>
+            <Image x:Name="WeatherDay1" Grid.Column="0" Grid.Row="0" Margin="9,7,8,31"/>
+            <TextBlock x:Name="TB_Day1MinMax" Text="°C / °C" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10"/>
+            <Image x:Name="WeatherDay2" Grid.Column="1" Grid.Row="0" Margin="9,7,8,31"/>
+            <TextBlock x:Name="TB_Day2MinMax" Text="°C / °C" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10"/>
+            <Image x:Name="WeatherDay3" Grid.Column="2" Grid.Row="0" Margin="9,7,8,31"/>
+            <TextBlock x:Name="TB_Day3MinMax" Text="°C / °C" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10"/>
         </Grid>
+        <TextBox x:Name="SearchBox" Grid.Column="1" HorizontalAlignment="Center" Margin="10,-50,0,0" TextWrapping="Wrap" Text="Search..." Opacity="1" VerticalAlignment="Center" Width="120" Height="21"/>
 
     </Grid>
 

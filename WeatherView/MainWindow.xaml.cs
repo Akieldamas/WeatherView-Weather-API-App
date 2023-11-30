@@ -18,18 +18,24 @@ using Newtonsoft.Json;
 
 namespace WeatherView
 {
+
+    /// <summary>
+    /// Logique d'interaction pour MainWindow.xaml
+    /// </summary>
+    /// 
+
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     public class _0H00
     {
         public string ICON { get; set; }
         public string CONDITION { get; set; }
         public string CONDITION_KEY { get; set; }
-        public double TMP2m { get; set; }
+        public int TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
-        public double PRMSL { get; set; }
+        public int PRMSL { get; set; }
         public int APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
@@ -44,6 +50,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _10H00
     {
@@ -52,11 +60,11 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -70,6 +78,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _11H00
     {
@@ -78,11 +88,11 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -96,6 +106,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _12H00
     {
@@ -104,11 +116,11 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -122,6 +134,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _13H00
     {
@@ -130,7 +144,7 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
@@ -148,6 +162,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _14H00
     {
@@ -156,7 +172,7 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public int WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
@@ -174,6 +190,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _15H00
     {
@@ -182,7 +200,7 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
@@ -200,41 +218,17 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _16H00
     {
         public string ICON { get; set; }
         public string CONDITION { get; set; }
         public string CONDITION_KEY { get; set; }
-        public int TMP2m { get; set; }
-        public double DPT2m { get; set; }
-        public int WNDCHILL2m { get; set; }
-        public object HUMIDEX { get; set; }
-        public int RH2m { get; set; }
-        public int PRMSL { get; set; }
-        public int APCPsfc { get; set; }
-        public int WNDSPD10m { get; set; }
-        public int WNDGUST10m { get; set; }
-        public int WNDDIR10m { get; set; }
-        public string WNDDIRCARD10 { get; set; }
-        public int ISSNOW { get; set; }
-        public string HCDC { get; set; }
-        public string MCDC { get; set; }
-        public string LCDC { get; set; }
-        public int HGT0C { get; set; }
-        public int KINDEX { get; set; }
-        public string CAPE180_0 { get; set; }
-        public int CIN180_0 { get; set; }
-    }
-
-    public class _17H00
-    {
-        public string ICON { get; set; }
-        public string CONDITION { get; set; }
-        public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
@@ -252,6 +246,36 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
+
+    public class _17H00
+    {
+        public string ICON { get; set; }
+        public string CONDITION { get; set; }
+        public string CONDITION_KEY { get; set; }
+        public int TMP2m { get; set; }
+        public double DPT2m { get; set; }
+        public object WNDCHILL2m { get; set; }
+        public object HUMIDEX { get; set; }
+        public int RH2m { get; set; }
+        public double PRMSL { get; set; }
+        public double APCPsfc { get; set; }
+        public int WNDSPD10m { get; set; }
+        public int WNDGUST10m { get; set; }
+        public int WNDDIR10m { get; set; }
+        public string WNDDIRCARD10 { get; set; }
+        public int ISSNOW { get; set; }
+        public string HCDC { get; set; }
+        public string MCDC { get; set; }
+        public string LCDC { get; set; }
+        public int HGT0C { get; set; }
+        public int KINDEX { get; set; }
+        public string CAPE180_0 { get; set; }
+        public int CIN180_0 { get; set; }
+    }
+
+
 
     public class _18H00
     {
@@ -260,11 +284,11 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -278,6 +302,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _19H00
     {
@@ -286,11 +312,11 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public int WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
-        public int PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double PRMSL { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -305,18 +331,20 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
+
+
     public class _1H00
     {
         public string ICON { get; set; }
         public string CONDITION { get; set; }
         public string CONDITION_KEY { get; set; }
-        public int TMP2m { get; set; }
+        public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -330,6 +358,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _20H00
     {
@@ -338,11 +368,11 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
-        public int PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double PRMSL { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -356,6 +386,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _21H00
     {
@@ -364,11 +396,11 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -382,6 +414,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _22H00
     {
@@ -390,11 +424,11 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -408,6 +442,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _23H00
     {
@@ -416,7 +452,7 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
@@ -434,6 +470,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _2H00
     {
@@ -442,11 +480,11 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
-        public int PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double PRMSL { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -460,6 +498,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _3H00
     {
@@ -468,11 +508,11 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public int WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -486,6 +526,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _4H00
     {
@@ -494,11 +536,11 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
-        public int PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double PRMSL { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -512,6 +554,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _5H00
     {
@@ -520,7 +564,7 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public int WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
@@ -538,6 +582,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _6H00
     {
@@ -546,7 +592,7 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
@@ -564,6 +610,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _7H00
     {
@@ -572,7 +620,7 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
@@ -591,18 +639,20 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
+
+
     public class _8H00
     {
         public string ICON { get; set; }
         public string CONDITION { get; set; }
         public string CONDITION_KEY { get; set; }
-        public double TMP2m { get; set; }
+        public int TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -616,6 +666,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class _9H00
     {
@@ -624,11 +676,11 @@ namespace WeatherView
         public string CONDITION_KEY { get; set; }
         public double TMP2m { get; set; }
         public double DPT2m { get; set; }
-        public double WNDCHILL2m { get; set; }
+        public object WNDCHILL2m { get; set; }
         public object HUMIDEX { get; set; }
         public int RH2m { get; set; }
         public double PRMSL { get; set; }
-        public int APCPsfc { get; set; }
+        public double APCPsfc { get; set; }
         public int WNDSPD10m { get; set; }
         public int WNDGUST10m { get; set; }
         public int WNDDIR10m { get; set; }
@@ -642,6 +694,8 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
+
 
     public class CityInfo
     {
@@ -653,6 +707,8 @@ namespace WeatherView
         public string sunrise { get; set; }
         public string sunset { get; set; }
     }
+
+
 
     public class CurrentCondition
     {
@@ -670,6 +726,8 @@ namespace WeatherView
         public string icon_big { get; set; }
     }
 
+
+
     public class FcstDay0
     {
         public string date { get; set; }
@@ -683,6 +741,8 @@ namespace WeatherView
         public string icon_big { get; set; }
         public HourlyData hourly_data { get; set; }
     }
+
+
 
     public class FcstDay1
     {
@@ -698,6 +758,8 @@ namespace WeatherView
         public HourlyData hourly_data { get; set; }
     }
 
+
+
     public class FcstDay2
     {
         public string date { get; set; }
@@ -711,6 +773,8 @@ namespace WeatherView
         public string icon_big { get; set; }
         public HourlyData hourly_data { get; set; }
     }
+
+
 
     public class FcstDay3
     {
@@ -726,6 +790,8 @@ namespace WeatherView
         public HourlyData hourly_data { get; set; }
     }
 
+
+
     public class FcstDay4
     {
         public string date { get; set; }
@@ -740,6 +806,8 @@ namespace WeatherView
         public HourlyData hourly_data { get; set; }
     }
 
+
+
     public class ForecastInfo
     {
         public object latitude { get; set; }
@@ -747,80 +815,37 @@ namespace WeatherView
         public string elevation { get; set; }
     }
 
+
+
     public class HourlyData
     {
-        [JsonProperty("0H00")]
         public _0H00 _0H00 { get; set; }
-
-        [JsonProperty("1H00")]
         public _1H00 _1H00 { get; set; }
-
-        [JsonProperty("2H00")]
         public _2H00 _2H00 { get; set; }
-
-        [JsonProperty("3H00")]
         public _3H00 _3H00 { get; set; }
-
-        [JsonProperty("4H00")]
         public _4H00 _4H00 { get; set; }
-
-        [JsonProperty("5H00")]
         public _5H00 _5H00 { get; set; }
-
-        [JsonProperty("6H00")]
         public _6H00 _6H00 { get; set; }
-
-        [JsonProperty("7H00")]
         public _7H00 _7H00 { get; set; }
-
-        [JsonProperty("8H00")]
         public _8H00 _8H00 { get; set; }
-
-        [JsonProperty("9H00")]
         public _9H00 _9H00 { get; set; }
-
-        [JsonProperty("10H00")]
         public _10H00 _10H00 { get; set; }
-
-        [JsonProperty("11H00")]
         public _11H00 _11H00 { get; set; }
-
-        [JsonProperty("12H00")]
         public _12H00 _12H00 { get; set; }
-
-        [JsonProperty("13H00")]
         public _13H00 _13H00 { get; set; }
-
-        [JsonProperty("14H00")]
         public _14H00 _14H00 { get; set; }
-
-        [JsonProperty("15H00")]
         public _15H00 _15H00 { get; set; }
-
-        [JsonProperty("16H00")]
         public _16H00 _16H00 { get; set; }
-
-        [JsonProperty("17H00")]
         public _17H00 _17H00 { get; set; }
-
-        [JsonProperty("18H00")]
         public _18H00 _18H00 { get; set; }
-
-        [JsonProperty("19H00")]
         public _19H00 _19H00 { get; set; }
-
-        [JsonProperty("20H00")]
         public _20H00 _20H00 { get; set; }
-
-        [JsonProperty("21H00")]
         public _21H00 _21H00 { get; set; }
-
-        [JsonProperty("22H00")]
         public _22H00 _22H00 { get; set; }
-
-        [JsonProperty("23H00")]
         public _23H00 _23H00 { get; set; }
     }
+
+
 
     public class Root
     {
@@ -834,12 +859,6 @@ namespace WeatherView
         public FcstDay4 fcst_day_4 { get; set; }
     }
 
-
-
-
-    /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         
@@ -847,37 +866,60 @@ namespace WeatherView
           public MainWindow()
           {
               InitializeComponent();
-          _: GetWeather();
-          }
+              _: GetWeather();
+          }   
 
           public async Task<string> GetWeather()
           {
               HttpClient client = new HttpClient();
               try
               {
-                  HttpResponseMessage response = await client.GetAsync("https://www.prevision-meteo.ch/services/json/Annecy");
-                  if (response.IsSuccessStatusCode)
-                  {
+                HttpResponseMessage response = await client.GetAsync("https://www.prevision-meteo.ch/services/json/Annecy");
+                if (response.IsSuccessStatusCode)
+                {
                     var content = await response.Content.ReadAsStringAsync();
                     Root root = JsonConvert.DeserializeObject<Root>(content);
 
                     CurrentCondition currentcondition = root.current_condition;
                     FcstDay0 TodayForecast = root.fcst_day_0;
-                    
+                    FcstDay1 ForecastDay1 = root.fcst_day_1;
+                    FcstDay2 ForecastDay2 = root.fcst_day_2;
+                    FcstDay3 ForecastDay3 = root.fcst_day_3;
+
+
+                    Uri resourceUri = new Uri(currentcondition.icon_big, UriKind.Absolute);
+
+                    TB_Date.Text = currentcondition.date.ToString();
+                    TB_Day.Text = TodayForecast.day_long.ToString();
+
                     TB_Temperature.Text = currentcondition.tmp.ToString();
+
+                    WeatherImage.Source = new BitmapImage(resourceUri);
                     TB_MaxTemperature.Text = TodayForecast.tmax.ToString() + "°C";
                     TB_MinTemperature.Text = TodayForecast.tmin.ToString() + "°C";
-                   // TB_WeatherState.Text = root.weather[0].description.ToString();
-                   // TB_Humidity.Text = "Precipitation: " + main.humidity.ToString() + " %";
-                    return "";
-                  }
-              }
-              catch (Exception ex)
-              {
-                  return ex.Message;
-              }
-              return null;
-          }
+                    TB_WeatherState.Text = currentcondition.condition.ToString();
+                    TB_Humidity.Text = currentcondition.humidity.ToString() + "%";
 
+                    TB_Day1MinMax.Text = ForecastDay1.tmin.ToString() + "/" + ForecastDay1.tmax.ToString();
+                    TB_Day2MinMax.Text = ForecastDay2.tmin.ToString() + "/" + ForecastDay2.tmax.ToString();
+                    TB_Day3MinMax.Text = ForecastDay3.tmin.ToString() + "/" + ForecastDay3.tmax.ToString();
+                    Uri resourceUri2 = new Uri(ForecastDay1.icon_big, UriKind.Absolute);
+                    Uri resourceUri3 = new Uri(ForecastDay2.icon_big, UriKind.Absolute);
+                    Uri resourceUri4 = new Uri(ForecastDay3.icon_big, UriKind.Absolute);
+                    WeatherDay1.Source = new BitmapImage(resourceUri2);
+                    WeatherDay2.Source = new BitmapImage(resourceUri3);
+                    WeatherDay3.Source = new BitmapImage(resourceUri4);
+                }
+                else
+                {
+                    var tt = "error";
+                }
+                return null;
+               }
+               catch (Exception ex)
+                {
+                return "";
+                }
+        }
     }
 }
