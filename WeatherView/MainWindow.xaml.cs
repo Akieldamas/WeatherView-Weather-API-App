@@ -1,29 +1,22 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-using System.Net.Http;
-using Newtonsoft.Json;
+using System.IO;
+using System.Reflection;
+using System.Windows.Threading;
+using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 
 namespace WeatherView
 {
-
-    /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
-    /// </summary>
-    /// 
-
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     public class _0H00
     {
@@ -76,6 +69,7 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
+
     public class _11H00
     {
         public string ICON { get; set; }
@@ -101,7 +95,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
 
     public class _12H00
     {
@@ -129,8 +122,6 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
-
-
     public class _13H00
     {
         public string ICON { get; set; }
@@ -156,8 +147,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
-
 
     public class _14H00
     {
@@ -185,8 +174,6 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
-
-
     public class _15H00
     {
         public string ICON { get; set; }
@@ -212,8 +199,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
-
 
     public class _16H00
     {
@@ -241,8 +226,6 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
-
-
     public class _17H00
     {
         public string ICON { get; set; }
@@ -268,8 +251,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
-
 
     public class _18H00
     {
@@ -297,8 +278,6 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
-
-
     public class _19H00
     {
         public string ICON { get; set; }
@@ -324,8 +303,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
-
 
     public class _1H00
     {
@@ -353,8 +330,6 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
-
-
     public class _20H00
     {
         public string ICON { get; set; }
@@ -380,8 +355,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
-
 
     public class _21H00
     {
@@ -409,8 +382,6 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
-
-
     public class _22H00
     {
         public string ICON { get; set; }
@@ -436,8 +407,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
-
 
     public class _23H00
     {
@@ -465,8 +434,6 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
-
-
     public class _2H00
     {
         public string ICON { get; set; }
@@ -492,8 +459,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
-
 
     public class _3H00
     {
@@ -521,8 +486,6 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
-
-
     public class _4H00
     {
         public string ICON { get; set; }
@@ -548,8 +511,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
-
 
     public class _5H00
     {
@@ -577,7 +538,6 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
-
     public class _6H00
     {
         public string ICON { get; set; }
@@ -603,7 +563,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
 
     public class _7H00
     {
@@ -631,8 +590,6 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
-
-
     public class _8H00
     {
         public string ICON { get; set; }
@@ -658,8 +615,6 @@ namespace WeatherView
         public string CAPE180_0 { get; set; }
         public int CIN180_0 { get; set; }
     }
-
-
 
     public class _9H00
     {
@@ -687,8 +642,6 @@ namespace WeatherView
         public int CIN180_0 { get; set; }
     }
 
-
-
     public class CityInfo
     {
         public string name { get; set; }
@@ -699,8 +652,6 @@ namespace WeatherView
         public string sunrise { get; set; }
         public string sunset { get; set; }
     }
-
-
 
     public class CurrentCondition
     {
@@ -718,8 +669,6 @@ namespace WeatherView
         public string icon_big { get; set; }
     }
 
-
-
     public class FcstDay0
     {
         public string date { get; set; }
@@ -733,8 +682,6 @@ namespace WeatherView
         public string icon_big { get; set; }
         public HourlyData hourly_data { get; set; }
     }
-
-
 
     public class FcstDay1
     {
@@ -750,8 +697,6 @@ namespace WeatherView
         public HourlyData hourly_data { get; set; }
     }
 
-
-
     public class FcstDay2
     {
         public string date { get; set; }
@@ -765,8 +710,6 @@ namespace WeatherView
         public string icon_big { get; set; }
         public HourlyData hourly_data { get; set; }
     }
-
-
 
     public class FcstDay3
     {
@@ -782,8 +725,6 @@ namespace WeatherView
         public HourlyData hourly_data { get; set; }
     }
 
-
-
     public class FcstDay4
     {
         public string date { get; set; }
@@ -798,16 +739,12 @@ namespace WeatherView
         public HourlyData hourly_data { get; set; }
     }
 
-
-
     public class ForecastInfo
     {
         public object latitude { get; set; }
         public object longitude { get; set; }
         public string elevation { get; set; }
     }
-
-
 
     public class HourlyData
     {
@@ -837,8 +774,6 @@ namespace WeatherView
         public _23H00 _23H00 { get; set; }
     }
 
-
-
     public class Root
     {
         public CityInfo city_info { get; set; }
@@ -851,67 +786,228 @@ namespace WeatherView
         public FcstDay4 fcst_day_4 { get; set; }
     }
 
+
+
     public partial class MainWindow : Window
     {
-        
+        string previousCity;
 
-          public MainWindow()
-          {
-              InitializeComponent();
-              _: GetWeather();
-          }   
+        int seconds = 0;
+        DispatcherTimer timer;
+        CityBoxManager cityboxmanager = new CityBoxManager();
 
-          public async Task<string> GetWeather()
+        string filePath = Path.Combine("..", "..", "..", "Files", "FavoriteCities.txt");
+        public MainWindow()
           {
-              HttpClient client = new HttpClient();
-              try
-              {
-                HttpResponseMessage response = await client.GetAsync("https://www.prevision-meteo.ch/services/json/Annecy");
+            InitializeComponent();
+            //     _ = DataGrabber(city);
+            cityboxmanager.ComboBox_CitiesFunction(filePath);
+            Initialize_Timer();
+        }
+
+        public async Task<Root> DataGrabber(string city)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                HttpResponseMessage response = await client.GetAsync("https://www.prevision-meteo.ch/services/json/" + city);
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
                     Root root = JsonConvert.DeserializeObject<Root>(content);
+                    GetWeather(root);
+                    return root;
+                    
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        private void GetWeather(Root root)
+        {
+            try
+            {
+                CurrentCondition currentcondition = root.current_condition;
+                FcstDay0 TodayForecast = root.fcst_day_0;
+                FcstDay1 ForecastDay1 = root.fcst_day_1;
+                FcstDay2 ForecastDay2 = root.fcst_day_2;
+                FcstDay3 ForecastDay3 = root.fcst_day_3;
 
-                    CurrentCondition currentcondition = root.current_condition;
-                    FcstDay0 TodayForecast = root.fcst_day_0;
-                    FcstDay1 ForecastDay1 = root.fcst_day_1;
-                    FcstDay2 ForecastDay2 = root.fcst_day_2;
-                    FcstDay3 ForecastDay3 = root.fcst_day_3;
+                Uri resourceUri = new Uri(currentcondition.icon_big, UriKind.Absolute);
+
+                TB_City.Text = root.city_info.name.ToString();
+                TB_Date.Text = currentcondition.date.ToString();
+                TB_Day.Text = TodayForecast.day_long.ToString();
+
+                TB_Temperature.Text = currentcondition.tmp.ToString();
+
+                WeatherImage.Source = new BitmapImage(resourceUri);
+                TB_MaxTemperature.Text = TodayForecast.tmax.ToString() + "°C";
+                TB_MinTemperature.Text = TodayForecast.tmin.ToString() + "°C";
+                TB_WeatherState.Text = currentcondition.condition.ToString();
+                TB_Humidity.Text = currentcondition.humidity.ToString() + "%";
+                TB_WindSpeed.Text = currentcondition.wnd_spd.ToString() + " km/h";
+                TB_Sunrise.Text = root.city_info.sunrise.ToString();
+                TB_Sunset.Text = root.city_info.sunset.ToString();
 
 
-                    Uri resourceUri = new Uri(currentcondition.icon_big, UriKind.Absolute);
+                TB_Day1MinMax.Text = ForecastDay1.day_short + " " + ForecastDay1.tmin.ToString() + " / " + ForecastDay1.tmax.ToString();
+                TB_Day2MinMax.Text = ForecastDay2.day_short + " " + ForecastDay2.tmin.ToString() + " / " + ForecastDay2.tmax.ToString();
+                TB_Day3MinMax.Text = ForecastDay3.day_short + " " + ForecastDay3.tmin.ToString() + " / " + ForecastDay3.tmax.ToString();
+                Uri ForecastDay1Icon = new Uri(ForecastDay1.icon_big, UriKind.Absolute);
+                Uri ForecastDay2Icon = new Uri(ForecastDay2.icon_big, UriKind.Absolute);
+                Uri ForecastDay3Icon = new Uri(ForecastDay3.icon_big, UriKind.Absolute);
+                WeatherDay1.Source = new BitmapImage(ForecastDay1Icon);
+                WeatherDay2.Source = new BitmapImage(ForecastDay2Icon);
+                WeatherDay3.Source = new BitmapImage(ForecastDay3Icon);
+            }
+            catch (Exception ex)
+            {
+           //  Handle exceptions, log, or display an error message
+               string city = previousCity;
+               DataGrabber(city);
+            }
+        }
 
-                    TB_Date.Text = currentcondition.date.ToString();
-                    TB_Day.Text = TodayForecast.day_long.ToString();
+        private void FavoriteButton_Click(object sender, RoutedEventArgs e)
+        {
+            string currentCity = TB_City.Text;
 
-                    TB_Temperature.Text = currentcondition.tmp.ToString();
+            string filePath = Path.Combine("..", "..", "..", "Files", "FavoriteCities.txt");
 
-                    WeatherImage.Source = new BitmapImage(resourceUri);
-                    TB_MaxTemperature.Text = TodayForecast.tmax.ToString() + "°C";
-                    TB_MinTemperature.Text = TodayForecast.tmin.ToString() + "°C";
-                    TB_WeatherState.Text = currentcondition.condition.ToString();
-                    TB_Humidity.Text = currentcondition.humidity.ToString() + "%";
+            string fullPath = Path.GetFullPath(filePath);
 
-                    TB_Day1MinMax.Text = ForecastDay1.tmin.ToString() + "/" + ForecastDay1.tmax.ToString();
-                    TB_Day2MinMax.Text = ForecastDay2.tmin.ToString() + "/" + ForecastDay2.tmax.ToString();
-                    TB_Day3MinMax.Text = ForecastDay3.tmin.ToString() + "/" + ForecastDay3.tmax.ToString();
-                    Uri resourceUri2 = new Uri(ForecastDay1.icon_big, UriKind.Absolute);
-                    Uri resourceUri3 = new Uri(ForecastDay2.icon_big, UriKind.Absolute);
-                    Uri resourceUri4 = new Uri(ForecastDay3.icon_big, UriKind.Absolute);
-                    WeatherDay1.Source = new BitmapImage(resourceUri2);
-                    WeatherDay2.Source = new BitmapImage(resourceUri3);
-                    WeatherDay3.Source = new BitmapImage(resourceUri4);
+            List<string> existingCities = File.ReadLines(fullPath).Select(city => city.Trim()).ToList();
+
+            bool cityExists = existingCities.Exists(city => city.Equals(currentCity, StringComparison.OrdinalIgnoreCase));
+
+            if (cityExists)
+            {
+                existingCities.Remove(currentCity);
+            }
+            else
+            {
+                existingCities.Add(currentCity);
+            }
+            File.WriteAllLines(fullPath, existingCities);
+            ComboBox_Initializer();
+        }
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            previousCity = TB_City.Text;
+            DataGrabber(SearchBox.Text);
+            SearchBox.Text = "Search...";
+
+        }
+
+        private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (SearchBox.Text == "Search...")
+            {
+                SearchBox.Text = "";
+            }
+        }
+        private void ComboBox_Initializer()
+        {
+            string[] lines = File.ReadAllLines(filePath);
+
+            ComboBox_Cities.ItemsSource = lines;
+        }
+        private void ComboBox_Cities_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string city = ComboBox_Cities.SelectedItem.ToString();
+            DataGrabber(city);
+
+        }
+
+        public void Initialize_Timer()
+        {
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+        public void Timer_Tick(object sender, EventArgs e)
+        {
+            seconds++;
+            Debug.WriteLine(seconds);
+            if (seconds >= 60)
+            {
+                seconds = 0;
+                ResetData();
+                Debug.WriteLine("Resetting to 0");
+            }
+        }
+
+        public void ResetData()
+        {
+            DataGrabber(TB_City.Text);
+        }
+
+        string NameFilePath = Path.Combine("..", "..", "..", "Files", "Name.txt");
+        private void TB_Name_GotFocus(object sender, RoutedEventArgs e)
+        {
+            string[] lines = File.ReadAllLines(NameFilePath);
+            string Name = lines.FirstOrDefault();
+
+            if (TB_Name.Text == Name)
+            {
+                TB_Name.Text = "";
+            }
+        }
+
+        private void TB_Name_LostFocus(object sender, RoutedEventArgs e)
+        {
+            string[] lines = File.ReadAllLines(NameFilePath);
+            if (TB_Name.Text.Length > 0)
+            {
+                string Name = TB_Name.Text;
+                File.WriteAllText(NameFilePath, Name);
+            }
+            else
+            {
+                string Name = lines.FirstOrDefault();
+                TB_Name.Text = Name;
+            }
+        }
+    }
+
+
+    public class CityBoxManager
+    {
+        string city;
+        public MainWindow mainWindow;
+        public CityBoxManager()
+        {
+        }
+
+        public ComboBox ComboBox_Cities { get; set; }
+        public void ComboBox_CitiesFunction(string filePath)
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines(filePath);
+
+                ComboBox_Cities.ItemsSource = lines;
+                if (lines.Length > 0)
+                {
+                    ComboBox_Cities.ItemsSource = lines;
+                    string firstCity = lines.FirstOrDefault();
+
+                    mainWindow.DataGrabber(firstCity);
                 }
                 else
                 {
-                    var tt = "error";
+                    city = "Paris";
+                    mainWindow.DataGrabber(city);
                 }
-                return null;
-               }
-               catch (Exception ex)
-                {
-                return "";
-                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
     }
 }
