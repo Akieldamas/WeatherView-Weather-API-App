@@ -45,7 +45,7 @@
         <TextBlock x:Name="TB_Date" Grid.Row="0" Text="" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,46,0,0" VerticalAlignment="Top" Width="104" Height="26" Grid.Column="2" FontSize="17"/>
         <TextBlock x:Name="TB_Day" Grid.Row="0" Text="" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,61,0,0" VerticalAlignment="Top" Width="104" Height="26" Grid.Column="2" FontSize="20" Grid.RowSpan="2"/>
         <TextBlock x:Name="TB_City" Grid.Row="1" Text="Annecy" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontSize="40" Grid.Column="1"/>
-        <TextBox x:Name="TB_Name" Text="Daniel Da Silva Gomes" Foreground="White" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="3" Margin="98,67,0,0" SelectionOpacity="1" Grid.RowSpan="2" GotFocus="TB_Name_GotFocus" LostFocus="TB_Name_LostFocus"/>
+        <TextBox x:Name="TB_Name" Text="Insert Name" Foreground="White" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,67,0,0" SelectionOpacity="1" Grid.RowSpan="2" GotFocus="TB_Name_GotFocus" Grid.Column="1" KeyDown="OnKeyDownHandler8_Name"/>
 
         <TextBlock x:Name="TB_WeatherState" Grid.RowSpan="3" Text="" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="3"/>
         <Button x:Name="FavoriteButton" Grid.Row="1" Grid.ColumnSpan="3" Margin="144,0,8,45" Background="Transparent" BorderBrush="Transparent" Width="35" Height="35" Click="FavoriteButton_Click" >
@@ -119,10 +119,8 @@
             <TextBlock x:Name="TB_Day3MinMax" Text="" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10" FontSize="18"/>
         </Grid>
         <Border Grid.ColumnSpan="2" Grid.Row="0" CornerRadius="10" Background="White" BorderThickness="0" Opacity="0.4" BorderBrush="White" Margin="42,11,109,61" Grid.Column="1"/>
-        <TextBox x:Name="SearchBox" Grid.ColumnSpan="3" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" Margin="50,-50,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Center" Width="120" Height="21" GotFocus="SearchBox_GotFocus"/>
-        <Button x:Name="SearchButton" Grid.Column="1" HorizontalAlignment="Center" Margin="-80,-50,0,0" VerticalAlignment="Center" Width="21" Height="21" Click="SearchButton_Click" BorderThickness="0" Background="Transparent">
-            <Image Source="\Assets\SearchIcon.png" Height="21" Width="21"/>
-        </Button>
+        <TextBox x:Name="SearchBox" Grid.ColumnSpan="3" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" Margin="50,-50,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Center" Width="120" Height="21" KeyDown="OnKeyDownHandler8_Search" GotFocus="SearchBox_GotFocus"/>
+        
     </Grid>
 
 </Window>

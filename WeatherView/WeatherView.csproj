@@ -19,6 +19,17 @@
     <None Remove="Assets\Sunrise.png" />
     <None Remove="Assets\Sunset.png" />
     <None Remove="Assets\WindIcon.png" />
+    <None Remove="Files\FavoriteCities.txt" />
+    <None Remove="Files\Name.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Files\FavoriteCities.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Name.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
