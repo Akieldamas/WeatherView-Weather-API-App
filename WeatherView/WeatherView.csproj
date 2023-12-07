@@ -24,12 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Files\FavoriteCities.txt">
+    <Resource Include="Files\FavoriteCities.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\Name.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
+    <Resource Include="Files\Name.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

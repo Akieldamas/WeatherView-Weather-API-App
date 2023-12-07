@@ -27,10 +27,8 @@ namespace WeatherView
         DispatcherTimer timer;
 
         CityBoxManager cityboxmanager;
+       // Uri NameFilePath = new Uri("Files/Name.txt", UriKind.Relative);
 
-        //CHANGER filepath pathcombine par Uri
-        string filePath = "Files/FavoriteCities.txt";
-        string NameFilePath = "Files/Name.txt";
         APIManager apimanager;
 
         public MainWindow()
@@ -42,14 +40,16 @@ namespace WeatherView
             Initializer();
             Initialize_Timer();
         }
-        
-        
-        private async void UpdateUI() // function to change UI using data from API
+        private async void UpdateUI(string cityUpdate) // function to change UI using data from API
         {
             try
             {
-                Root root = await apimanager.DataGrabber(TB_City.Text);
-
+                Root root = await apimanager.DataGrabber(cityUpdate);
+                if (root == null)
+                {
+                    TB_City.Text = "City not found";
+                    return;
+                }
                 CurrentCondition currentcondition = root.current_condition;
                 FcstDay0 TodayForecast = root.fcst_day_0;
                 FcstDay1 ForecastDay1 = root.fcst_day_1;
@@ -87,22 +87,36 @@ namespace WeatherView
             catch (Exception ex)
             {
            //  Handle exceptions, log, or display an error message
-               string city = previousCity;
-               apimanager.DataGrabber(city);
+               string PrevCity = previousCity;
+               UpdateUI(PrevCity);
             }
         }
-
+        
         private void Initializer() 
         {
-            string[] lines = File.ReadAllLines(filePath);
-            ComboBox_Cities.ItemsSource = lines; // nitialize combobox with favorite cities
+
+            // Enregistre tout les villes favorites dans une variable 
+            string filePathCB = @"Files/FavoriteCities.txt";
+            string[] linesCB = File.ReadAllLines(filePathCB);
+
+            ComboBox_Cities.ItemsSource = linesCB; // nitialize combobox with favorite cities
             ComboBox_Cities.SelectedIndex = 0;
+
+            if (File.ReadAllText(@"Files/Name.txt").Length > 1)
+            {
+                TB_Name.Text = File.ReadAllText(@"Files/Name.txt"); // initialize name textbox with name from file
+            }
+     }
+        private void ComboBox_Cities_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
             if (ComboBox_Cities.SelectedItem == null)
             {
-                cityboxmanager.AddCity_Favorite("Paris");
+                return;
             }
-
+            string cityCombobox = ComboBox_Cities.SelectedItem.ToString();
+            UpdateUI(cityCombobox);
         }
+
         public void Initialize_Timer() // timer function to reset data every minute
         {
             timer = new DispatcherTimer();
@@ -117,51 +131,27 @@ namespace WeatherView
             if (seconds >= 60)
             {
                 seconds = 0;
-                apimanager.DataGrabber(TB_City.Text);
+                UpdateUI(TB_City.Text);
                 Debug.WriteLine("Resetting to 0");
             }
         }
 
         private void TB_Name_GotFocus(object sender, RoutedEventArgs e)
         {
-            string[] lines = File.ReadAllLines(NameFilePath);
-            string Name = lines.FirstOrDefault();
+            TB_Name.Text = "";
+        }
 
-            if (TB_Name.Text == TB_Name.Text)
-            {
-                TB_Name.Text = "";
-            }
-        }
-        private void OnKeyDownHandler8_Name(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                string[] lines = File.ReadAllLines(NameFilePath);
-                if (TB_Name.Text.Length > 0)
-                {
-                    string Name = TB_Name.Text;
-                    File.WriteAllText(NameFilePath, Name);
-                }
-                else
-                {
-                    string Name = lines.FirstOrDefault();
-                    TB_Name.Text = Name;
-                }
-            }
-        }
         private void OnKeyDownHandler8_Search(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
                 previousCity = TB_City.Text;
-                apimanager.DataGrabber(SearchBox.Text);
-                SearchBox.Text = "Search...";
+                UpdateUI(SearchBox.Text);
             }
         }
         private void FavoriteButton_Click(object sender, RoutedEventArgs e) // function for button to add or remove city from favorite cities
         {
             string currentCity = TB_City.Text;
-
             if (cityboxmanager.GetCities().Contains(currentCity))
             {
                 cityboxmanager.RemoveCity_Favorite(currentCity);
@@ -170,20 +160,31 @@ namespace WeatherView
             {
                 cityboxmanager.AddCity_Favorite(currentCity);
             }
-            
-            Initializer();
-        }
-        private void ComboBox_Cities_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string city = ComboBox_Cities.SelectedItem.ToString();
-            apimanager.DataGrabber(city);
 
+            string filePathCB = @"Files/FavoriteCities.txt";
+            string[] linesCB = File.ReadAllLines(filePathCB);
+
+            ComboBox_Cities.ItemsSource = linesCB; // nitialize combobox with favorite cities
+            ComboBox_Cities.SelectedIndex = 0;
         }
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e) // function to clear search box when clicked
         {
-            if (SearchBox.Text == "Search...")
+           SearchBox.Text = "";
+        }
+
+        private void SaveNameButton_Click(object sender, RoutedEventArgs e)
+        {
+            string NameFilePath = @"Files/Name.txt";
+            string[] lines = File.ReadAllLines(NameFilePath);
+            if (TB_Name.Text.Length > 0)
             {
-                SearchBox.Text = "";
+                string Name = TB_Name.Text;
+                File.WriteAllText(NameFilePath, Name);
+            }
+            else
+            {
+                string Name = lines.FirstOrDefault();
+                TB_Name.Text = Name;
             }
         }
     }
@@ -191,10 +192,7 @@ namespace WeatherView
 
     public class CityBoxManager
     {
-        string city;
-
-        string filePath = Path.Combine("..", "..", "..", "Files", "FavoriteCities.txt");
-
+        string filePathCB = @"Files/FavoriteCities.txt";
         public CityBoxManager()
         {
         }
@@ -203,18 +201,20 @@ namespace WeatherView
 
         public void AddCity_Favorite(string city)
         {
-           File.AppendAllText(filePath, city + Environment.NewLine);
+            File.AppendAllText(filePathCB, city + Environment.NewLine);
         }
 
         public void RemoveCity_Favorite(string city)
         {
-           File.WriteAllText(filePath, "");
+            string[] lines = File.ReadAllLines(filePathCB);
+            List<string> linesList = lines.ToList();
+            linesList.Remove(city);
+            File.WriteAllLines(filePathCB, linesList.ToArray());
         }
-        public string GetCities()
+        public string[] GetCities()
         {
-            string[] lines = File.ReadAllLines(filePath);
-            string cities = lines.FirstOrDefault();
-            return cities;
+            string[] lines = File.ReadAllLines(filePathCB);
+            return lines;
         }
     }
 }

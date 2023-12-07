@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace WeatherView.Service
 {
@@ -802,6 +803,11 @@ namespace WeatherView.Service
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (content.Contains("error"))
+                    {
+                        MessageBox.Show("Error: " + content);   
+                        return null;
+                    }       
                     Root root = JsonConvert.DeserializeObject<Root>(content);
                     return root;
 
