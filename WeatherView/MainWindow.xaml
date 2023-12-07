@@ -5,12 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WeatherView"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="400">
+        Title="WeatherView" Height="600" Width="400" ResizeMode="NoResize">
+
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="TextBlock.Foreground" Value="White"/>
+            </Style>
+        </Grid.Resources>
+
         <Grid.Background>
-            <ImageBrush ImageSource="\Assets\Background.jpg"></ImageBrush>
-            </Grid.Background>
-        
+            <ImageBrush ImageSource="\Assets\Background.jpg"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="185*"/>
+            <ColumnDefinition Width="114*"/>
+        </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="76*"/>
             <RowDefinition Height="66*"/>
@@ -20,11 +33,95 @@
             <RowDefinition Height="30*"/>
             <RowDefinition Height="101*"/>
         </Grid.RowDefinitions>
-        <ComboBox x:Name="ComboBox_Cities" Grid.Row="0" HorizontalAlignment="Left" Margin="35,10,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
-        <Label x:Name="Label_Time" Grid.Row="0" Content="02:30" HorizontalAlignment="Left" Margin="287,0,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-        <Label x:Name="Label_Date" Grid.Row="0" Content="14 DEC 2019" HorizontalAlignment="Left" Margin="287,20,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-        <Label x:Name="Label_Day" Grid.Row="0" Content="Saturday" HorizontalAlignment="Left" Margin="287,40,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-         
-           
+
+        <ComboBox x:Name="ComboBox_Cities" HorizontalAlignment="Left" Margin="12,9,0,0" VerticalAlignment="Top" Width="120" Height="22" Grid.ColumnSpan="2" Opacity="0.3" SelectionChanged="ComboBox_Cities_SelectionChanged">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FFE5E5E5" Offset="0.03"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <TextBlock x:Name="TB_Date" Grid.Row="0" Text="" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,46,0,0" VerticalAlignment="Top" Width="104" Height="26" Grid.Column="2" FontSize="17"/>
+        <TextBlock x:Name="TB_Day" Grid.Row="0" Text="" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,61,0,0" VerticalAlignment="Top" Width="104" Height="26" Grid.Column="2" FontSize="20" Grid.RowSpan="2"/>
+        <TextBlock x:Name="TB_City" Grid.Row="1" Text="Annecy" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontSize="40" Grid.Column="1"/>
+        <TextBox x:Name="TB_Name" Text="Insert Name" Foreground="White" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,67,0,0" SelectionOpacity="1" Grid.RowSpan="2" GotFocus="TB_Name_GotFocus" Grid.Column="1"/>
+
+        <TextBlock x:Name="TB_WeatherState" Grid.RowSpan="3" Text="" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="3"/>
+        <Button x:Name="FavoriteButton" Grid.Row="1" Grid.ColumnSpan="3" Margin="144,0,8,45" Background="Transparent" BorderBrush="Transparent" Width="35" Height="35" Click="FavoriteButton_Click" >
+            <Image x:Name="FavoriteImage" Source="Assets\Favorited.png"/>
+        </Button>
+        <TextBlock x:Name="TB_Temperature" Grid.RowSpan="2" Text="" Margin="0,60,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" Grid.Row="1"/>
+        <TextBlock x:Name="TB_Celsius" Grid.Row="1" Grid.ColumnSpan="1" Text="°C" Margin="71,66,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Grid.RowSpan="2"/>
+
+
+        <TextBlock x:Name="TB_MaxTemperature" Grid.Row="1" Grid.Column="0" Text="" Margin="30,-25,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="TB_MinTemperature" Grid.Row="1" Grid.Column="0" Text="" Margin="30,25,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+        <Image x:Name="WeatherImage" Grid.Row="1" Grid.Column="2"/>
+
+        <Image x:Name="Image_MaxTemp" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,-25,0,0" Source="\Assets\MaxTempArrow.png" Height="20" Width="20"/>
+        <Image x:Name="Image_MinTemp" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,30,0,0" Source="\Assets\MinTempArrow.png" Height="20" Width="20" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan="5" Margin="30,200,30,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="20" BorderThickness="2" Opacity="0.4" BorderBrush="White"/>
+            <TextBlock x:Name="TB_WindSpeed" Text="" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" Margin="70,0,0,0"/>
+            <TextBlock x:Name="TB_Humidity" Text="" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" Margin="82,0,0,0"/>
+            <TextBlock x:Name="TB_Sunrise" Text="" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" Margin="82,0,0,0"/>
+            <TextBlock x:Name="TB_Sunset" Text="" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" Margin="81,0,0,0"/>
+
+
+
+            <TextBlock x:Name="TB_WindSpeedText" Text="Wind Speed" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" Margin="19,0,0,4"/>
+            <Image x:Name="WindImage" Source="\Assets\WindIcon.png" Grid.Column="1" Height="83" Width="65" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3,0,0,0"/>
+            <Image x:Name="HumidityImage" Source="\Assets\HumidityImage.png" Height="77" Width="73" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,15,0,0"/>
+            <TextBlock x:Name="TB_HumidityText" Text="Humidity" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" Margin="37,0,0,3"/>
+            <Image x:Name="SunriseImage" Source="\Assets\Sunrise.png" Height="77" Width="73" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="9,0,0,0" Grid.Row="1"/>
+            <TextBlock x:Name="TB_SunRiseText" Text="Sunrise" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Margin="0,75,0,0" Grid.Row="1"/>
+
+            <Image x:Name="SunsetImage" Source="\Assets\Sunset.png" Height="59" Width="67" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock x:Name="TB_SunSetText" Text="Sunset" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Margin="0,75,0,0" Grid.Row="1" Grid.Column="1"/>
+
+
+        </Grid>
+
+
+        <TextBlock x:Name="EarlyWeather" Grid.ColumnSpan="3" Grid.Row="5" Text="---- Early Weather ----" TextAlignment="Center" FontSize="20" Opacity="0.8"/>
+
+        <Grid Grid.ColumnSpan="3" Grid.Row="5" Margin="30,36,30,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.ColumnSpan="3" CornerRadius="20" BorderThickness="2" Opacity="0.4" BorderBrush="White"/>
+            <Image x:Name="WeatherDay1" Grid.Column="0" Grid.Row="0" Margin="9,7,8,31"/>
+            <TextBlock x:Name="TB_Day1MinMax" Text="" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10" FontSize="18"/>
+            <Image x:Name="WeatherDay2" Grid.Column="1" Grid.Row="0" Margin="9,7,8,31"/>
+            <TextBlock x:Name="TB_Day2MinMax" Text="" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10" FontSize="18"/>
+            <Image x:Name="WeatherDay3" Grid.Column="2" Grid.Row="0" Margin="9,7,8,31"/>
+            <TextBlock x:Name="TB_Day3MinMax" Text="" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,0,10" FontSize="18"/>
+        </Grid>
+        <Border Grid.ColumnSpan="2" Grid.Row="0" CornerRadius="10" Background="White" BorderThickness="0" Opacity="0.4" BorderBrush="White" Margin="42,11,109,61" Grid.Column="1"/>
+        <TextBox x:Name="SearchBox" Grid.ColumnSpan="3" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" Margin="50,-50,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Center" Width="120" Height="21" KeyDown="OnKeyDownHandler8_Search" GotFocus="SearchBox_GotFocus"/>
+        <Button x:Name="SaveNameButton" Content="Save" HorizontalAlignment="Right" Margin="0,74,2,0" BorderBrush="White" Foreground="White" Background="Transparent" Grid.RowSpan="2" VerticalAlignment="Top" Height="20" Width="31" Click="SaveNameButton_Click" Grid.Column="1"/>
+
     </Grid>
+
 </Window>

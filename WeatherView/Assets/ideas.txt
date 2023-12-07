@@ -1,8 +1,0 @@
-pdf is in teams :
-Subramani > TP > tp api weather chsarp wpf pdf
-
-for vers 2 :
-NOM PRENOM : make it as a hello screen that appears when you open the app then it fades progressively
-
-favorite city (probably will make it as the last used one or something)
-recherche par comboBox pour changer ville

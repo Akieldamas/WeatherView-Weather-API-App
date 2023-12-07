@@ -9,7 +9,31 @@
 
   <ItemGroup>
     <None Remove="Assets\Background.jpg" />
+    <None Remove="Assets\Favorited.png" />
+    <None Remove="Assets\HumidityImage.png" />
     <None Remove="Assets\image.png" />
+    <None Remove="Assets\MaxTempArrow.png" />
+    <None Remove="Assets\MinTempArrow.png" />
+    <None Remove="Assets\NotFavorite.png" />
+    <None Remove="Assets\SearchIcon.png" />
+    <None Remove="Assets\Sunrise.png" />
+    <None Remove="Assets\Sunset.png" />
+    <None Remove="Assets\WindIcon.png" />
+    <None Remove="Files\FavoriteCities.txt" />
+    <None Remove="Files\Name.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Files\FavoriteCities.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Files\Name.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,7 +44,34 @@
     <Resource Include="Assets\Background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Favorited.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\HumidityImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\MaxTempArrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\MinTempArrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\NotFavorite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\SearchIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Sunrise.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Sunset.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\WindIcon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
