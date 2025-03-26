@@ -15,7 +15,7 @@ Key features include:
 - **Humidity, wind speed, sunrise, and sunset times**.  
 - **Weather forecast** for the next 3 days.  
 - **Search bar** to search for cities.  
-- **Favorite Cities** can be saved and accessed from the top combobox.  
+- **Favorite Cities** can be saved by pressing the star button and can be accessed from the top combobox. (They are saved in `FavoriteCities.txt`  
 - **Name** is saved in `Name.txt` for personalization.  
 
 The app uses a **public API** from [Prévision Météo](https://www.prevision-meteo.ch/), which covers cities across **France, Italy, Belgium**, and more regions around Europe. Not all global cities are supported, but it offers great coverage for several European countries.  
