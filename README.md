@@ -15,10 +15,10 @@ Key features include:
 - **Humidity, wind speed, sunrise, and sunset times**.  
 - **Weather forecast** for the next 3 days.  
 - **Search bar** to search for cities.  
-- **Favorite Cities** can be saved by pressing the star button and can be accessed from the top combobox. (They are saved in `FavoriteCities.txt`  
+- **Favorite Cities** can be saved by pressing the star button and can be accessed from the top combobox. (They are saved in `FavoriteCities.txt`)
 - **Name** is saved in `Name.txt` for personalization.  
 
-The app uses a **public API** from [Prévision Météo](https://www.prevision-meteo.ch/), which covers cities across **France, Italy, Belgium**, and more regions around Europe. Not all global cities are supported, but it offers great coverage for several European countries.  
+The app uses a **public API** from [Prévision Météo](https://www.prevision-meteo.ch/), which covers cities across **France, Italy, Belgium**, and more. Not all global cities are supported, but it offers great coverage for several European countries.  
 
 ### Key Features:  
 - **Date and Day of the Week** are displayed.  
@@ -35,7 +35,7 @@ To run this app, you will need **Visual Studio** since it's a WPF application.
 ### Steps to Open the Project:  
 1. Clone the repository:  
    ```sh
-   git clone https://github.com/Akieldamas/Weather-App.git
+   git clone https://github.com/Akieldamas/Weather-App.git ```
    * Not familiar with Git? You can download it here and use the command above.
 
 OR Download it manually:
