@@ -1,4 +1,10 @@
-# Weather App  
+# WeatherView (Weather App)  
+
+## 🎯 Objective  
+The main objective of this project was to:
+- Work with an **existing public API** to retrieve weather data.
+- Implement **data saving** techniques (e.g., saving names and favorite cities to `txt` files or `app.xaml`).
+- Focus on **UI/UX** for a compact, mobile-like interface on a desktop app.  
 
 ## 📝 Description  
 This is a **Weather App** developed in **WPF C#** as the **3rd project** for my **1st year programming class** (after the Hangman game). The app was designed to test working with APIs and saving data in the app (like names in `Name.txt` or favorite cities in `FavoriteCities.txt`).  
