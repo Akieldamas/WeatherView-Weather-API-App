@@ -35,7 +35,7 @@ To run this app, you will need **Visual Studio** since it's a WPF application.
 ### Steps to Open the Project:  
 1. Clone the repository:  
    ```sh
-   git clone https://github.com/Akieldamas/Weather-App.git
+   git clone https://github.com/Akieldamas/WeatherView-Weather-API-App.git
    ```
    * Not familiar with Git? You can download it here and use the command above.
 
@@ -45,7 +45,7 @@ OR Download it manually:
 
    * Choose Download ZIP or Open in Visual Studio.
 
-
+![image](https://github.com/user-attachments/assets/899720e8-14af-42df-830c-3bde1633032d)
 
 ## 🎶 Credits
 * Weather Data API: Provided by Prévision Météo.
