@@ -1,4 +1,4 @@
-# WeatherView (Weather App)  
+# WeatherView (Weather App)
 
 ## 🎯 Objective  
 The main objective of this project was to:
